@@ -16,14 +16,16 @@ class Clinic
         void showPatients();
 
     private:
-        Patient *patient_list = NULL;
-        Schedule *schedule_list = NULL;
+        Patient *patient_list;
+        Schedule *schedule_list;
         int total_patients;
         int total_schedules;
 };
 
 Clinic::Clinic()
 {
+    patient_list = NULL;
+    schedule_list = NULL;
     total_patients = 0;
     total_schedules = 0;
 }
