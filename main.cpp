@@ -1,23 +1,32 @@
 #include <iostream>
-#include "Clinic.h"
+#include "class/Clinica.h"
+#include "class/Validador.h"
 
 using namespace std;
 
 int main()
 {
-    Clinic c;
-    cout << c.getTotalPatients() << endl;
-    c.addPatient("999", "matheus", "02061995");
-    c.addPatient("123", "matheus", "02061955");
-    c.addPatient("456", "matheus", "02061995");
-    c.addPatient("556", "matheus", "02061995");
-    c.addPatient("656", "matheus", "02061995");
-    c.addPatient("756", "matheus", "02061995");
-    c.addPatient("856", "matheus", "02061995");
-    c.addPatient("056", "matheus", "02061995");
-    c.remPatient("056");
+    Clinica *c = new Clinica();
+    int v;
 
+    for (int i=0; i<10; i++)
+    {
+        string cpf, nome, data;
+        cout << "Digite o CPF do paciente " << i+1 << ": ";
+        cin >> cpf;
+        cout << v << endl;
+        cout << "Digite o nome do paciente " << i+1 << ": ";
+        cin >> nome;
+        cout << "Digite o aniversario do paciente " << i+1 << ": ";
+        cin >> data;
+        v = c->addPaciente(cpf, nome, data);
+        if (!v) cout << "Paciente ja cadastrado" << endl;
+        if (v<0) cout << "Quantidade de pacientes maxima ja atingida" << endl;
+        if (v>0) cout << "Paciente cadastrado com sucesso" << endl;
 
-    c.showPatients();
+        
+    }
+
+    c->mostraPacientes();
     return 0;
 }
