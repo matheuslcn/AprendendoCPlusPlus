@@ -14,7 +14,6 @@ int main()
         string cpf, nome, data;
         cout << "Digite o CPF do paciente " << i+1 << ": ";
         cin >> cpf;
-        cout << v << endl;
         cout << "Digite o nome do paciente " << i+1 << ": ";
         cin >> nome;
         cout << "Digite o aniversario do paciente " << i+1 << ": ";
@@ -23,8 +22,6 @@ int main()
         if (!v) cout << "Paciente ja cadastrado" << endl;
         if (v<0) cout << "Quantidade de pacientes maxima ja atingida" << endl;
         if (v>0) cout << "Paciente cadastrado com sucesso" << endl;
-
-        
     }
 
     c->mostraPacientes();
